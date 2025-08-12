@@ -48,8 +48,9 @@ print("number of letters in your name: " + str(lenght_of_name))
 # substraction -
 # multiplication *
 # division /
-# mod //
+# floor division //
 # to the power **
+# modulus %
 
 # code is evaluated left to right - but assignments right side first
 
