@@ -6,7 +6,6 @@ all_dealt_cards = []
 goal = 21
 dealer_threshold = 17
 number_of_decks = 1
-continue_switch = True
 
 def deal_card(amount):
     '''deal_card function takes the number of cards to deal as a paramater, and returns the list of dealt cards'''
