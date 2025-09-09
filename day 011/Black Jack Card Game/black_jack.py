@@ -4,8 +4,8 @@ import deck
 player_hand = []
 dealer_hand = []
 all_dealt_cards = []
-goal = 21
-dealer_threshold = 17
+GOAL = 21
+DEALER_THRESHOLD = 17
 number_of_decks = 1
 continue_switch = True
 
@@ -35,7 +35,7 @@ def count_points(hand):
                 else:
                     points += deck.standard_52_card_deck[suit][str(card[suit])]
     for n in range(ace_count):
-        if points + deck.standard_52_card_deck[suit]["A"][0] > goal:
+        if points + deck.standard_52_card_deck[suit]["A"][0] > GOAL:
             points += deck.standard_52_card_deck[suit]["A"][1]
         else:
             points += deck.standard_52_card_deck[suit]["A"][0]
@@ -65,13 +65,13 @@ while True:
     print(count_points(player_hand))
     # print(dealer_hand)
     # print(count_points(dealer_hand))
-    if count_points(player_hand) > goal:
+    if count_points(player_hand) > GOAL:
         break
 
 player_points = count_points(player_hand)
 dealer_points = count_points(dealer_hand)
 if dealer_points != "Black Jack":
-    while dealer_points < dealer_threshold:
+    while dealer_points < DEALER_THRESHOLD:
         dealer_hand.append(deal_card(1))
         dealer_points = count_points(dealer_hand)
 print(f"{player_points} <---> {dealer_points}")
@@ -81,9 +81,9 @@ elif player_points == "Black Jack":
     print("you won")
 elif dealer_points == "Black Jack":
     print("bust")
-elif player_points > goal:
+elif player_points > GOAL:
     print("bust")
-elif dealer_points > goal:
+elif dealer_points > GOAL:
     print("you won")
 elif player_points < dealer_points:
     print("bust")
